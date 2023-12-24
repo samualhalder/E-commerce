@@ -1,0 +1,11 @@
+[33mcommit 0a26dbf070bfd67e7c4f12f107d51a1a6708fa87[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Samual Halder <samual.halder2020@gamil.com>
+Date:   Sat Dec 23 22:07:54 2023 +0530
+
+    Day 1: the home page is created
+
+[33mcommit 6a8b2cf1deebba6b421ee0b5209bed6d81bcfec4[m
+Author: Samual Halder <samual.halder2020@gamil.com>
+Date:   Sat Dec 23 18:55:02 2023 +0530
+
+    Initialize project using Create React App
