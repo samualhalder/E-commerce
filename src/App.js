@@ -1,6 +1,6 @@
 import { Counter } from './features/counter/Counter';
 import './App.css';
-import ProductList from './features/product-list/ProductList';
+import ProductList from './features/product-list/components/ProductList';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import SignupPage from './pages/SignupPage';
@@ -15,6 +15,9 @@ import {
 import Login from './features/auth/components/Login';
 import Signup from './features/auth/components/Signup';
 import CartPage from './pages/CartPage';
+import Checkout from './pages/Checkout';
+import ProductDetails from './features/product-list/components/ProductDetails';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +36,14 @@ const router = createBrowserRouter([
     path: "/cart",
     element: <CartPage></CartPage>,
   },
+  {
+    path: "/checkout",
+    element: <Checkout> </Checkout>,
+  },
+  {
+    path:"/product-details",
+    element: <ProductDetailsPage></ProductDetailsPage>
+  }
 ]);
 
 function App() {
