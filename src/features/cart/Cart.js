@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { increment, incrementAsync, selectCount } from "./cartSlice";
+// import { increment, incrementAsync, selectCount } from "./cartSlice";
 import { Fragment } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
@@ -14,9 +14,9 @@ const products = [
     color: "Salmon",
     price: "$90.00",
     quantity: 1,
-    imageSrc:
+    thumbnail:
       "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
+    description:
       "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
   },
   {
@@ -26,16 +26,16 @@ const products = [
     color: "Blue",
     price: "$32.00",
     quantity: 1,
-    imageSrc:
+    thumbnail:
       "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
+    description:
       "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
   },
   // More products...
 ];
 
 export default function Cart() {
-  const count = useSelector(selectCount);
+  // const count = useSelector(selectCount);
   const dispatch = useDispatch();
   const [open, setOpen] = useState(true);
 
@@ -50,8 +50,8 @@ export default function Cart() {
               <li key={product.id} className="flex py-6">
                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                   <img
-                    src={product.imageSrc}
-                    alt={product.imageAlt}
+                    src={product.thumbnail}
+                    alt={product.description}
                     className="h-full w-full object-cover object-center"
                   />
                 </div>
