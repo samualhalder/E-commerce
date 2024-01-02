@@ -39,3 +39,22 @@ export function fetchProductsByFilters(filter,sort,pagination) {
   }
   );
 }
+
+export function fetchCategory(){
+  return new Promise(async (resolve) =>{
+    //TODO: we will not hard-code server URL here
+    const response = await fetch('http://localhost:8080/category') 
+    const data = await response.json()
+    resolve({data})
+  }
+  );
+}
+export function fetchBrands(){
+  return new Promise(async (resolve) =>{
+    //TODO: we will not hard-code server URL here
+    const response = await fetch('http://localhost:8080/brand') 
+    const data = await response.json()
+    resolve({data})
+  }
+  );
+}
