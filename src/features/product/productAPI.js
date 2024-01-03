@@ -8,6 +8,16 @@ export function fetchAllProducts() {
   );
 }
 
+export function fetchProductById(id) {
+  return new Promise(async (resolve) =>{
+    //TODO: we will not hard-code server URL here
+    const response = await fetch('http://localhost:8080/products/'+id) 
+    const data = await response.json()
+    resolve({data})
+  }
+  );
+}
+
 export function fetchProductsByFilters(filter,sort,pagination) {
   // filter = {"category":["smartphone","laptops"]}
   // sort = {_sort:"price",_order="desc"}
@@ -40,19 +50,19 @@ export function fetchProductsByFilters(filter,sort,pagination) {
   );
 }
 
-export function fetchCategory(){
+
+export function fetchCategories() {
   return new Promise(async (resolve) =>{
-    //TODO: we will not hard-code server URL here
-    const response = await fetch('http://localhost:8080/category') 
+    const response = await fetch('http://localhost:8080/categories') 
     const data = await response.json()
     resolve({data})
   }
   );
 }
-export function fetchBrands(){
+
+export function fetchBrands() {
   return new Promise(async (resolve) =>{
-    //TODO: we will not hard-code server URL here
-    const response = await fetch('http://localhost:8080/brand') 
+    const response = await fetch('http://localhost:8080/brands') 
     const data = await response.json()
     resolve({data})
   }
