@@ -1,20 +1,28 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { fetchCount } from './authAPI';
+import { checkUsers, createUsers} from './authAPI';
 
 const initialState = {
-  value: 0,
+  logedInUser: null,
   status: 'idle',
+  error:null,
 };
 
-export const incrementAsync = createAsyncThunk(
-  'counter/fetchCount',
-  async (amount) => {
-    const response = await fetchCount(amount);
+export const createUsersAsync = createAsyncThunk(
+  'counter/createusers',
+  async (userData) => {
+    const response = await createUsers(userData);
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   }
 );
-
+export const checkUsersAsync = createAsyncThunk(
+  'counter/checkusers',
+  async (loginData) => {
+    const response = await checkUsers(loginData);
+    // The value we return becomes the `fulfilled` action payload
+    return response.data;
+  }
+);
 export const counterSlice = createSlice({
   name: 'counter',
   initialState,
@@ -25,18 +33,27 @@ export const counterSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(incrementAsync.pending, (state) => {
+      .addCase(createUsersAsync.pending, (state) => {
         state.status = 'loading';
       })
-      .addCase(incrementAsync.fulfilled, (state, action) => {
+      .addCase(createUsersAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.value += action.payload;
+        state.logedInUser = action.payload;
+      })
+      .addCase(checkUsersAsync.rejected, (state,action) => {
+        state.status = 'loading';
+        state.error=action.error;
+      })
+      .addCase(checkUsersAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.logedInUser = action.payload;
       });
   },
 });
 
 export const { increment } = counterSlice.actions;
 
-export const selectCount = (state) => state.counter.value;
+export const selectLogedInUser = (state) => state.auth.logedInUser;
+export const selectError= (state) => state.auth.error;
 
 export default counterSlice.reducer;
