@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, incrementAsync, selectCount } from './cartSlice';
+import { UpadateItemsAsync, deleteItemsAsync, increment, incrementAsync, selectCart, selectCount } from './cartSlice';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
@@ -34,10 +34,17 @@ const products = [
 ];
 
 export default function Cart() {
-  const count = useSelector(selectCount);
+  
+  const products= useSelector(selectCart);
   const dispatch = useDispatch();
   const [open, setOpen] = useState(true);
-
+  const totalPrice=products.reduce((amount,item)=>item.price+item.quantity+amount,0);
+  const handleQty= (e,product)=>{
+    dispatch(UpadateItemsAsync({...product,quantity: +e.target.value}))
+  }
+  const handleDelete=(e,id)=>{
+    dispatch(deleteItemsAsync(id));
+  }
   return (
     <>
       <div>
@@ -52,8 +59,8 @@ export default function Cart() {
                   <li key={product.id} className="flex py-6">
                     <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                       <img
-                        src={product.imageSrc}
-                        alt={product.imageAlt}
+                        src={product.thumbnail}
+                        alt={product.title}
                         className="h-full w-full object-cover object-center"
                       />
                     </div>
@@ -62,12 +69,12 @@ export default function Cart() {
                       <div>
                         <div className="flex justify-between text-base font-medium text-gray-900">
                           <h3>
-                            <a href={product.href}>{product.name}</a>
+                            <a href={product.href}>{product.title}</a>
                           </h3>
-                          <p className="ml-4">{product.price}</p>
+                          <p className="ml-4">${product.price}</p>
                         </div>
                         <p className="mt-1 text-sm text-gray-500">
-                          {product.color}
+                          {product.brand}
                         </p>
                       </div>
                       <div className="flex flex-1 items-end justify-between text-sm">
@@ -78,9 +85,13 @@ export default function Cart() {
                           >
                             Qty
                           </label>
-                          <select>
+                          <select onChange={(e)=>handleQty(e,product)} value={product.quantity}>
                             <option value="1">1</option>
                             <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
                           </select>
                         </div>
 
@@ -88,6 +99,7 @@ export default function Cart() {
                           <button
                             type="button"
                             className="font-medium text-indigo-600 hover:text-indigo-500"
+                            onClick={(e)=>handleDelete(e,product.id)}
                           >
                             Remove
                           </button>
@@ -103,7 +115,7 @@ export default function Cart() {
           <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
             <div className="flex justify-between text-base font-medium text-gray-900">
               <p>Subtotal</p>
-              <p>$262.00</p>
+              <p>${totalPrice}</p>
             </div>
             <p className="mt-0.5 text-sm text-gray-500">
               Shipping and taxes calculated at checkout.

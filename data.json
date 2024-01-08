@@ -2345,5 +2345,89 @@
       "password": "Samual1",
       "id": 3
     }
+  ],
+  "cart": [
+    {
+      "id": 11,
+      "title": "perfume Oil",
+      "description": "Mega Discount, Impression of Acqua Di Gio by GiorgioArmani concentrated attar perfume Oil",
+      "price": 13,
+      "discountPercentage": 8.4,
+      "rating": 4.26,
+      "stock": 65,
+      "brand": "Impression of Acqua Di Gio",
+      "category": "fragrances",
+      "thumbnail": "https://i.dummyjson.com/data/products/11/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/11/1.jpg",
+        "https://i.dummyjson.com/data/products/11/2.jpg",
+        "https://i.dummyjson.com/data/products/11/3.jpg",
+        "https://i.dummyjson.com/data/products/11/thumbnail.jpg"
+      ],
+      "quantity": 1,
+      "user": 3
+    },
+    {
+      "id": 52,
+      "title": "FREE FIRE T Shirt",
+      "description": "quality and professional print - It doesn't just look high quality, it is high quality.",
+      "price": 10,
+      "discountPercentage": 14.72,
+      "rating": 4.52,
+      "stock": 128,
+      "brand": "FREE FIRE",
+      "category": "mens-shirts",
+      "thumbnail": "https://i.dummyjson.com/data/products/52/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/52/1.png",
+        "https://i.dummyjson.com/data/products/52/2.png",
+        "https://i.dummyjson.com/data/products/52/3.jpg",
+        "https://i.dummyjson.com/data/products/52/4.jpg",
+        "https://i.dummyjson.com/data/products/52/thumbnail.jpg"
+      ],
+      "quantity": 1,
+      "user": 3
+    },
+    {
+      "id": 2,
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/2/1.jpg",
+        "https://i.dummyjson.com/data/products/2/2.jpg",
+        "https://i.dummyjson.com/data/products/2/3.jpg",
+        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+      ],
+      "quantity": 1,
+      "user": 3
+    },
+    {
+      "id": 99,
+      "title": "American Vintage Wood Pendant Light",
+      "description": "American Vintage Wood Pendant Light Farmhouse Antique Hanging Lamp Lampara Colgante",
+      "price": 46,
+      "discountPercentage": 8.84,
+      "rating": 4.32,
+      "stock": 138,
+      "brand": "Ifei Home",
+      "category": "lighting",
+      "thumbnail": "https://i.dummyjson.com/data/products/99/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/99/1.jpg",
+        "https://i.dummyjson.com/data/products/99/2.jpg",
+        "https://i.dummyjson.com/data/products/99/3.jpg",
+        "https://i.dummyjson.com/data/products/99/4.jpg",
+        "https://i.dummyjson.com/data/products/99/thumbnail.jpg"
+      ],
+      "quantity": 1,
+      "user": 3
+    }
   ]
 }

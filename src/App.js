@@ -9,12 +9,17 @@ import {
   RouterProvider,
   Route,
   Link,
+  useSearchParams,
 } from 'react-router-dom';
 import Cart from './features/cart/Cart';
 import CartPage from './pages/CartPage';
 import Checkout from './pages/Checkout';
 import ProductDetailPage from './pages/ProductDetailPage';
 import Protected from './features/auth/components/Protectd';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchItemsByidAsync } from './features/cart/cartSlice';
+import { selectLogedInUser } from './features/auth/authSlice';
+import { useEffect } from 'react';
 const router = createBrowserRouter([
   {
     path: '/',
@@ -45,6 +50,17 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const user=useSelector(selectLogedInUser);
+  const dispatch=useDispatch();
+  
+    useEffect(()=>{
+      if(user){
+        dispatch(fetchItemsByidAsync(user.id));
+      }
+    },[dispatch,user])
+  
+ 
+ 
   return (
     <div className="App">
       <RouterProvider router={router} />
