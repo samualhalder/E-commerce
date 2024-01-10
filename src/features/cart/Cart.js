@@ -3,42 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { UpadateItemsAsync, deleteItemsAsync, increment, incrementAsync, selectCart, selectCount } from './cartSlice';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
-const products = [
-  {
-    id: 1,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    price: '$90.00',
-    quantity: 1,
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 2,
-    name: 'Medium Stuff Satchel',
-    href: '#',
-    color: 'Blue',
-    price: '$32.00',
-    quantity: 1,
-    imageSrc:
-      'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
-    imageAlt:
-      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
-  },
-  // More products...
-];
 
 export default function Cart() {
   
   const products= useSelector(selectCart);
   const dispatch = useDispatch();
   const [open, setOpen] = useState(true);
-  const totalPrice=products.reduce((amount,item)=>item.price+item.quantity+amount,0);
+  const totalPrice=products.reduce((amount,item)=>item.price*item.quantity+amount,0);
   const handleQty= (e,product)=>{
     dispatch(UpadateItemsAsync({...product,quantity: +e.target.value}))
   }
@@ -48,6 +21,7 @@ export default function Cart() {
   return (
     <>
       <div>
+        {!products.length && <Navigate to={'/'} replace={true}></Navigate>}
         <div className="mx-auto mt-12 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
             <h1 className="text-4xl my-5 font-bold tracking-tight text-gray-900">
