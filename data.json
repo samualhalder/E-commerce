@@ -2336,92 +2336,67 @@
   ],
   "users": [
     {
-      "email": "abc@g.com",
-      "password": "Samual1",
-      "addresses": [],
+      "email": "test@gmail.com",
+      "password": "Qwerty123",
+      "addresses": [
+        {
+          "name": "Abhishek R",
+          "email": "test@gmail.com",
+          "phone": "1234567788",
+          "street": "11th Main",
+          "city": "Banaglore",
+          "state": "Karnataka",
+          "pinCode": "560034"
+        },
+        {
+          "name": "Abhishek R",
+          "email": "test@gmail.com",
+          "phone": "1234567788",
+          "street": "11th Main",
+          "city": "Banaglore",
+          "state": "Karnataka",
+          "pinCode": "560034"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "email": "demo@gmail.com",
+      "password": "Qwerty123",
+      "addresses": [
+        {
+          "name": "Demo user",
+          "email": "demo@gmail.com",
+          "phone": "1234567788",
+          "street": "11th Main",
+          "city": "Mumbai",
+          "state": "Maharastra",
+          "pinCode": "220001"
+        }
+      ],
       "id": 2
     },
     {
       "email": "samual.halder2020@gmail.com",
-      "password": "Samual1",
+      "password": "Samual1$",
       "addresses": [
         {
           "name": "Samual Halder",
           "email": "samual.halder2020@gmail.com",
-          "phone": "08777473815",
-          "street": "UTTAR BAMDA",
-          "city": "Jhargram",
-          "region": "West Bengal",
-          "pinCode": "712201"
-        },
-        {
-          "name": "Santu mahata",
-          "email": "santumahata211104@gmail.com",
-          "phone": "08777473815",
-          "street": "ddsgaergve",
-          "city": "Jhargram",
-          "region": "West Bengal",
-          "pinCode": "712201"
-        },
-        {
-          "name": "Santu mahata",
-          "email": "santumahata211104@gmail.com",
-          "phone": "08777473815",
-          "street": "ddsgaergve",
-          "city": "Jhargram",
-          "region": "West Bengal",
-          "pinCode": "712201"
+          "phone": "7439590311",
+          "street": "banganandapally",
+          "city": "joypul",
+          "state": "West Bengal",
+          "pinCode": "743234"
         }
       ],
       "id": 3
     }
   ],
-  "cart": [
-    {
-      "title": "iPhone X",
-      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-      "price": 899,
-      "discountPercentage": 17.94,
-      "rating": 4.44,
-      "stock": 34,
-      "brand": "Apple",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/2/1.jpg",
-        "https://i.dummyjson.com/data/products/2/2.jpg",
-        "https://i.dummyjson.com/data/products/2/3.jpg",
-        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": 3,
-      "id": 1
-    },
-    {
-      "title": "Microsoft Surface Laptop 4",
-      "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
-      "price": 1499,
-      "discountPercentage": 10.23,
-      "rating": 4.43,
-      "stock": 68,
-      "brand": "Microsoft Surface",
-      "category": "laptops",
-      "thumbnail": "https://i.dummyjson.com/data/products/8/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/8/1.jpg",
-        "https://i.dummyjson.com/data/products/8/2.jpg",
-        "https://i.dummyjson.com/data/products/8/3.jpg",
-        "https://i.dummyjson.com/data/products/8/4.jpg",
-        "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
-      ],
-      "quantity": 1,
-      "user": 3,
-      "id": 2
-    }
-  ],
+  "cart": [],
   "orders": [
     {
-      "products": [
+      "items": [
         {
           "title": "iPhone X",
           "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
@@ -2438,52 +2413,53 @@
             "https://i.dummyjson.com/data/products/2/3.jpg",
             "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
           ],
-          "quantity": 1,
-          "user": 3,
-          "id": 1
+          "quantity": 2,
+          "user": 1,
+          "id": 6
         }
       ],
-      "totalPrice": 899,
+      "totalAmount": 1798,
+      "totalItems": 2,
       "user": {
-        "email": "samual.halder2020@gmail.com",
-        "password": "Samual1",
+        "email": "test@gmail.com",
+        "password": "Qwerty123",
         "addresses": [
           {
-            "name": "Samual Halder",
-            "email": "samual.halder2020@gmail.com",
-            "phone": "08777473815",
-            "street": "UTTAR BAMDA",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
+            "name": "Abhishek R",
+            "email": "test@gmail.com",
+            "phone": "1234567788",
+            "street": "11th Main",
+            "city": "Banaglore",
+            "state": "Karnataka",
+            "pinCode": "560034"
           },
           {
-            "name": "Santu mahata",
-            "email": "santumahata211104@gmail.com",
-            "phone": "08777473815",
-            "street": "ddsgaergve",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
-          },
-          {
-            "name": "Santu mahata",
-            "email": "santumahata211104@gmail.com",
-            "phone": "08777473815",
-            "street": "ddsgaergve",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
+            "name": "Abhishek R",
+            "email": "test@gmail.com",
+            "phone": "1234567788",
+            "street": "11th Main",
+            "city": "Banaglore",
+            "state": "Karnataka",
+            "pinCode": "560034"
           }
         ],
-        "id": 3
+        "id": 1
       },
-      "selectedAddres": null,
-      "paymentMethode": "cash",
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Abhishek R",
+        "email": "test@gmail.com",
+        "phone": "1234567788",
+        "street": "11th Main",
+        "city": "Banaglore",
+        "state": "Karnataka",
+        "pinCode": "560034"
+      },
+      "status": "pending",
       "id": 1
     },
     {
-      "products": [
+      "items": [
         {
           "title": "iPhone X",
           "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
@@ -2500,235 +2476,174 @@
             "https://i.dummyjson.com/data/products/2/3.jpg",
             "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
           ],
-          "quantity": 1,
-          "user": 3,
-          "id": 1
+          "quantity": 2,
+          "user": 1,
+          "id": 6
         }
       ],
-      "totalPrice": 899,
+      "totalAmount": 1798,
+      "totalItems": 2,
       "user": {
-        "email": "samual.halder2020@gmail.com",
-        "password": "Samual1",
+        "email": "test@gmail.com",
+        "password": "Qwerty123",
         "addresses": [
           {
-            "name": "Samual Halder",
-            "email": "samual.halder2020@gmail.com",
-            "phone": "08777473815",
-            "street": "UTTAR BAMDA",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
+            "name": "Abhishek R",
+            "email": "test@gmail.com",
+            "phone": "1234567788",
+            "street": "11th Main",
+            "city": "Banaglore",
+            "state": "Karnataka",
+            "pinCode": "560034"
           },
           {
-            "name": "Santu mahata",
-            "email": "santumahata211104@gmail.com",
-            "phone": "08777473815",
-            "street": "ddsgaergve",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
-          },
-          {
-            "name": "Santu mahata",
-            "email": "santumahata211104@gmail.com",
-            "phone": "08777473815",
-            "street": "ddsgaergve",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
+            "name": "Abhishek R",
+            "email": "test@gmail.com",
+            "phone": "1234567788",
+            "street": "11th Main",
+            "city": "Banaglore",
+            "state": "Karnataka",
+            "pinCode": "560034"
           }
         ],
-        "id": 3
+        "id": 1
       },
-      "selectedAddres": null,
-      "paymentMethode": "cash",
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Abhishek R",
+        "email": "test@gmail.com",
+        "phone": "1234567788",
+        "street": "11th Main",
+        "city": "Banaglore",
+        "state": "Karnataka",
+        "pinCode": "560034"
+      },
+      "status": "pending",
       "id": 2
     },
     {
-      "products": [
+      "items": [
         {
-          "title": "iPhone X",
-          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-          "price": 899,
-          "discountPercentage": 17.94,
-          "rating": 4.44,
-          "stock": 34,
-          "brand": "Apple",
+          "id": 3,
+          "title": "Samsung Universe 9",
+          "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+          "price": 1249,
+          "discountPercentage": 15.46,
+          "rating": 4.09,
+          "stock": 36,
+          "brand": "Samsung",
           "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "thumbnail": "https://i.dummyjson.com/data/products/3/thumbnail.jpg",
           "images": [
-            "https://i.dummyjson.com/data/products/2/1.jpg",
-            "https://i.dummyjson.com/data/products/2/2.jpg",
-            "https://i.dummyjson.com/data/products/2/3.jpg",
-            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+            "https://i.dummyjson.com/data/products/3/1.jpg"
+          ],
+          "quantity": 2,
+          "user": 2
+        },
+        {
+          "id": 5,
+          "title": "Huawei P30",
+          "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+          "price": 499,
+          "discountPercentage": 10.58,
+          "rating": 4.09,
+          "stock": 32,
+          "brand": "Huawei",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/5/1.jpg",
+            "https://i.dummyjson.com/data/products/5/2.jpg",
+            "https://i.dummyjson.com/data/products/5/3.jpg"
           ],
           "quantity": 1,
-          "user": 3,
-          "id": 1
+          "user": 2
         }
       ],
-      "totalPrice": 899,
+      "totalAmount": 2997,
+      "totalItems": 3,
       "user": {
-        "email": "samual.halder2020@gmail.com",
-        "password": "Samual1",
+        "email": "demo@gmail.com",
+        "password": "Qwerty123",
         "addresses": [
           {
-            "name": "Samual Halder",
-            "email": "samual.halder2020@gmail.com",
-            "phone": "08777473815",
-            "street": "UTTAR BAMDA",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
-          },
-          {
-            "name": "Santu mahata",
-            "email": "santumahata211104@gmail.com",
-            "phone": "08777473815",
-            "street": "ddsgaergve",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
-          },
-          {
-            "name": "Santu mahata",
-            "email": "santumahata211104@gmail.com",
-            "phone": "08777473815",
-            "street": "ddsgaergve",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
+            "name": "Demo user",
+            "email": "demo@gmail.com",
+            "phone": "1234567788",
+            "street": "11th Main",
+            "city": "Mumbai",
+            "state": "Maharastra",
+            "pinCode": "220001"
           }
         ],
-        "id": 3
+        "id": 2
       },
-      "selectedAddres": null,
-      "paymentMethode": "cash",
+      "paymentMethod": "card",
+      "selectedAddress": {
+        "name": "Demo user",
+        "email": "demo@gmail.com",
+        "phone": "1234567788",
+        "street": "11th Main",
+        "city": "Mumbai",
+        "state": "Maharastra",
+        "pinCode": "220001"
+      },
+      "status": "pending",
       "id": 3
     },
     {
-      "products": [
+      "items": [
         {
-          "title": "iPhone X",
-          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-          "price": 899,
-          "discountPercentage": 17.94,
-          "rating": 4.44,
-          "stock": 34,
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
           "brand": "Apple",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
           "images": [
-            "https://i.dummyjson.com/data/products/2/1.jpg",
-            "https://i.dummyjson.com/data/products/2/2.jpg",
-            "https://i.dummyjson.com/data/products/2/3.jpg",
-            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+            "https://i.dummyjson.com/data/products/6/1.png",
+            "https://i.dummyjson.com/data/products/6/2.jpg",
+            "https://i.dummyjson.com/data/products/6/3.png",
+            "https://i.dummyjson.com/data/products/6/4.jpg"
           ],
           "quantity": 1,
           "user": 3,
           "id": 1
         }
       ],
-      "totalPrice": 899,
+      "totalAmount": 1749,
+      "totalItems": 1,
       "user": {
         "email": "samual.halder2020@gmail.com",
-        "password": "Samual1",
+        "password": "Samual1$",
         "addresses": [
           {
             "name": "Samual Halder",
             "email": "samual.halder2020@gmail.com",
-            "phone": "08777473815",
-            "street": "UTTAR BAMDA",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
-          },
-          {
-            "name": "Santu mahata",
-            "email": "santumahata211104@gmail.com",
-            "phone": "08777473815",
-            "street": "ddsgaergve",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
-          },
-          {
-            "name": "Santu mahata",
-            "email": "santumahata211104@gmail.com",
-            "phone": "08777473815",
-            "street": "ddsgaergve",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
+            "phone": "7439590311",
+            "street": "banganandapally",
+            "city": "joypul",
+            "state": "West Bengal",
+            "pinCode": "743234"
           }
         ],
         "id": 3
       },
-      "selectedAddres": null,
-      "paymentMethode": "cash",
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Samual Halder",
+        "email": "samual.halder2020@gmail.com",
+        "phone": "7439590311",
+        "street": "banganandapally",
+        "city": "joypul",
+        "state": "West Bengal",
+        "pinCode": "743234"
+      },
+      "status": "pending",
       "id": 4
-    },
-    {
-      "products": [
-        {
-          "title": "iPhone X",
-          "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
-          "price": 899,
-          "discountPercentage": 17.94,
-          "rating": 4.44,
-          "stock": 34,
-          "brand": "Apple",
-          "category": "smartphones",
-          "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
-          "images": [
-            "https://i.dummyjson.com/data/products/2/1.jpg",
-            "https://i.dummyjson.com/data/products/2/2.jpg",
-            "https://i.dummyjson.com/data/products/2/3.jpg",
-            "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
-          ],
-          "quantity": 1,
-          "user": 3,
-          "id": 1
-        }
-      ],
-      "totalPrice": 899,
-      "user": {
-        "email": "samual.halder2020@gmail.com",
-        "password": "Samual1",
-        "addresses": [
-          {
-            "name": "Samual Halder",
-            "email": "samual.halder2020@gmail.com",
-            "phone": "08777473815",
-            "street": "UTTAR BAMDA",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
-          },
-          {
-            "name": "Santu mahata",
-            "email": "santumahata211104@gmail.com",
-            "phone": "08777473815",
-            "street": "ddsgaergve",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
-          },
-          {
-            "name": "Santu mahata",
-            "email": "santumahata211104@gmail.com",
-            "phone": "08777473815",
-            "street": "ddsgaergve",
-            "city": "Jhargram",
-            "region": "West Bengal",
-            "pinCode": "712201"
-          }
-        ],
-        "id": 3
-      },
-      "selectedAddres": null,
-      "paymentMethode": "cash",
-      "id": 5
     }
   ]
 }

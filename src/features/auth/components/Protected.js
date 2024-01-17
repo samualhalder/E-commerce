@@ -1,14 +1,14 @@
 import { useSelector } from "react-redux";
-import { selectLogedInUser } from "../authSlice";
 import { Navigate } from "react-router-dom";
-import { HomeModernIcon } from "@heroicons/react/24/outline";
+import { selectLoggedInUser } from "../authSlice";
 
-function Protected({children}){
-    const user=useSelector(selectLogedInUser)
+function Protected({children}) {
+    const user = useSelector(selectLoggedInUser)
+
     if(!user){
         return <Navigate to='/login' replace={true}></Navigate>
     }
     return children;
- 
 }
+
 export default Protected;
