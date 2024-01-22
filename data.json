@@ -2388,6 +2388,15 @@
           "city": "joypul",
           "state": "West Bengal",
           "pinCode": "743234"
+        },
+        {
+          "name": "Doli Halder",
+          "email": "doli@gmail.com",
+          "phone": "08777473815",
+          "street": "UTTAR BAMDA",
+          "city": "Jhargram",
+          "state": "West Bengal",
+          "pinCode": "712201"
         }
       ],
       "id": 3
@@ -2644,6 +2653,113 @@
       },
       "status": "pending",
       "id": 4
+    },
+    {
+      "items": [
+        {
+          "title": "MacBook Pro",
+          "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+          "price": 1749,
+          "discountPercentage": 11.02,
+          "rating": 4.57,
+          "stock": 83,
+          "brand": "Apple",
+          "category": "laptops",
+          "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+          "images": [
+            "https://i.dummyjson.com/data/products/6/1.png",
+            "https://i.dummyjson.com/data/products/6/2.jpg",
+            "https://i.dummyjson.com/data/products/6/3.png",
+            "https://i.dummyjson.com/data/products/6/4.jpg"
+          ],
+          "quantity": 1,
+          "user": 3,
+          "id": 1
+        }
+      ],
+      "totalAmount": 1749,
+      "totalItems": 1,
+      "user": {
+        "email": "samual.halder2020@gmail.com",
+        "password": "Samual1$",
+        "addresses": [
+          {
+            "name": "Samual Halder",
+            "email": "samual.halder2020@gmail.com",
+            "phone": "7439590311",
+            "street": "banganandapally",
+            "city": "joypul",
+            "state": "West Bengal",
+            "pinCode": "743234"
+          }
+        ],
+        "id": 3
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Samual Halder",
+        "email": "samual.halder2020@gmail.com",
+        "phone": "7439590311",
+        "street": "banganandapally",
+        "city": "joypul",
+        "state": "West Bengal",
+        "pinCode": "743234"
+      },
+      "status": "pending",
+      "id": 5
+    },
+    {
+      "items": [
+        {
+          "title": "Huawei P30",
+          "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+          "price": 499,
+          "discountPercentage": 10.58,
+          "rating": 4.09,
+          "stock": 32,
+          "brand": "Huawei",
+          "category": "smartphones",
+          "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+          "images": [
+            "https://i.dummyjson.com/data/products/5/1.jpg",
+            "https://i.dummyjson.com/data/products/5/2.jpg",
+            "https://i.dummyjson.com/data/products/5/3.jpg"
+          ],
+          "quantity": 1,
+          "user": 3,
+          "id": 1
+        }
+      ],
+      "totalAmount": 499,
+      "totalItems": 1,
+      "user": {
+        "email": "samual.halder2020@gmail.com",
+        "password": "Samual1$",
+        "addresses": [
+          {
+            "name": "Samual Halder",
+            "email": "samual.halder2020@gmail.com",
+            "phone": "7439590311",
+            "street": "banganandapally",
+            "city": "joypul",
+            "state": "West Bengal",
+            "pinCode": "743234"
+          }
+        ],
+        "id": 3
+      },
+      "paymentMethod": "cash",
+      "selectedAddress": {
+        "name": "Samual Halder",
+        "email": "samual.halder2020@gmail.com",
+        "phone": "7439590311",
+        "street": "banganandapally",
+        "city": "joypul",
+        "state": "West Bengal",
+        "pinCode": "743234"
+      },
+      "status": "pending",
+      "id": 6
     }
   ]
 }
