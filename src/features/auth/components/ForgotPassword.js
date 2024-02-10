@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { Link, Navigate } from 'react-router-dom';
-import { checkUserAsync } from '../authSlice';
-import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import React, { useState } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { checkUserAsync } from "../authSlice";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
 
 export default function ForgotPassword() {
-  const dispatch=useDispatch()
-  
+  const dispatch = useDispatch();
+
   const {
     register,
     handleSubmit,
@@ -17,7 +17,6 @@ export default function ForgotPassword() {
 
   return (
     <>
-     
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -39,7 +38,6 @@ export default function ForgotPassword() {
               );
             })}
             className="space-y-6"
-    
           >
             <div>
               <label
@@ -51,11 +49,11 @@ export default function ForgotPassword() {
               <div className="mt-2">
                 <input
                   id="email"
-                  {...register('email', {
-                    required: 'email is required',
+                  {...register("email", {
+                    required: "email is required",
                     pattern: {
                       value: /\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b/gi,
-                      message: 'email not valid',
+                      message: "email not valid",
                     },
                   })}
                   type="email"
@@ -72,13 +70,13 @@ export default function ForgotPassword() {
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-              Send Code
+                Send Code
               </button>
             </div>
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Back to Home?{' '}
+            Back to Home?{" "}
             <Link
               to="/login"
               className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
