@@ -432,6 +432,9 @@ function ProductGrid({ products }) {
                     </p>
                   </div>
                 </div>
+                {product.stock <= 0 && (
+                  <div className="text-red-600">Out of stock</div>
+                )}
               </div>
             </Link>
           ))}

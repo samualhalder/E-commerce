@@ -31,6 +31,7 @@ import AdminHome from "./pages/AdminHome";
 import AdminProductDetailPage from "./pages/AdminProductDetailPage";
 import ProductFormPage from "./pages/ProductFormPage";
 import { AdminOrdersPage } from "./pages/AdminOrdersPage";
+import { ToastContainer } from "react-toastify";
 
 const router = createBrowserRouter([
   {
