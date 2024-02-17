@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { PhotoIcon, UserCircleIcon } from "@heroicons/react/24/solid";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -13,6 +13,7 @@ import {
 } from "../../product/productSlice";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router-dom";
+import Modal from "../../../common/Modal";
 
 // "id": 1,
 // "title": "iPhone 9",
@@ -41,6 +42,7 @@ export function ProductForm() {
     setValue,
     formState: { errors },
   } = useForm();
+  const [openModal, setOpenModal] = useState(false);
   const brands = useSelector(selectBrands);
   const catagories = useSelector(selectCategories);
   const dispatch = useDispatch();
@@ -51,7 +53,7 @@ export function ProductForm() {
     if (params.id) {
       dispatch(fetchAllProductByIdAsync(params.id));
     }
-  }, [params.id, dispatch]);
+  }, [params.id, dispatch, openModal]);
   useEffect(() => {
     if (selectedProduct && params.id) {
       setValue("title", selectedProduct.title);
@@ -384,10 +386,11 @@ export function ProductForm() {
           >
             Cancel
           </button>
+
           {selectedProduct && (
             <button
               type="submit"
-              onClick={handleDelete}
+              onClick={() => setOpenModal(true)}
               className="rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
               Delete
@@ -401,6 +404,14 @@ export function ProductForm() {
           </button>
         </div>
       </form>
+      <Modal
+        title="Delete product"
+        massage={`Do you want to delete ${selectedProduct.title}?`}
+        dengerOption="Delete"
+        dengerAction={handleDelete}
+        cancleAction={() => setOpenModal(false)}
+        showModal={openModal}
+      ></Modal>
     </>
   );
 }

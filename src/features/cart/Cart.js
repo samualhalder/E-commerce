@@ -10,10 +10,11 @@ import { XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { discountedPrice } from "../../app/constants";
+import Modal from "../../common/Modal";
 
 export default function Cart() {
   const dispatch = useDispatch();
-  const [open, setOpen] = useState(true);
+  const [openModal, setOpenModal] = useState(null);
 
   const items = useSelector(selectItems);
   const totalAmount = items.reduce(
@@ -33,7 +34,6 @@ export default function Cart() {
   return (
     <>
       {!items.length && <Navigate to="/" replace={true}></Navigate>}
-
       <div>
         <div className="mx-auto mt-12 bg-white max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
@@ -85,8 +85,16 @@ export default function Cart() {
                         </div>
 
                         <div className="flex">
+                          <Modal
+                            title="Remove from cart"
+                            massage={`Do you want to remove ${item.title} from the cart`}
+                            dengerOption="Remove"
+                            dengerAction={(e) => handleRemove(e, item.id)}
+                            cancleAction={(e) => setOpenModal(null)}
+                            showModal={openModal == item.id}
+                          ></Modal>
                           <button
-                            onClick={(e) => handleRemove(e, item.id)}
+                            onClick={(e) => setOpenModal(item.id)}
                             type="button"
                             className="font-medium text-indigo-600 hover:text-indigo-500"
                           >
