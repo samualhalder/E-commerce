@@ -129,10 +129,11 @@ export function AdminOrders() {
                             <img
                               className="w-6 h-6 rounded-full"
                               src={item.product.thumbnail}
+                              alt={item.product.title}
                             />
                           </div>
                           <span>
-                            {item.product.title} - #{item.product.quantity} - $
+                            {item.product.title} - #{item.quantity} - $
                             {discountedPrice(item.product)}
                           </span>
                         </div>
