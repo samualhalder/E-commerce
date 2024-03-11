@@ -1,5 +1,5 @@
-import React, { useState, Fragment, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState, Fragment, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchBrandsAsync,
   fetchCategoriesAsync,
@@ -9,35 +9,34 @@ import {
   selectCategories,
   selectProductListStatus,
   selectTotalItems,
-} from "../productSlice";
-import { Dialog, Disclosure, Menu, Transition } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+} from '../productSlice';
+import { Dialog, Disclosure, Menu, Transition } from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import {
   ChevronLeftIcon,
   ChevronRightIcon,
   StarIcon,
-} from "@heroicons/react/20/solid";
-import { Link } from "react-router-dom";
+} from '@heroicons/react/20/solid';
+import { Link } from 'react-router-dom';
 import {
   ChevronDownIcon,
   FunnelIcon,
   MinusIcon,
   PlusIcon,
   Squares2X2Icon,
-} from "@heroicons/react/20/solid";
-import { ITEMS_PER_PAGE } from "../../../app/constants";
-import { Pagination } from "../../../common/Pagination";
-import { TailSpin } from "react-loader-spinner";
-import { render } from "@testing-library/react";
+} from '@heroicons/react/20/solid';
+import { ITEMS_PER_PAGE, discountedPrice } from '../../../app/constants';
+import Pagination from '../../common/Pagination';
+import { Grid } from 'react-loader-spinner';
 
 const sortOptions = [
-  { name: "Best Rating", sort: "rating", order: "desc", current: false },
-  { name: "Price: Low to High", sort: "price", order: "asc", current: false },
-  { name: "Price: High to Low", sort: "price", order: "desc", current: false },
+  { name: 'Best Rating', sort: 'rating', order: 'desc', current: false },
+  { name: 'Price: Low to High', sort: 'price', order: 'asc', current: false },
+  { name: 'Price: High to Low', sort: 'price', order: 'desc', current: false },
 ];
 
 function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ');
 }
 
 export default function ProductList() {
@@ -49,13 +48,13 @@ export default function ProductList() {
   const status = useSelector(selectProductListStatus);
   const filters = [
     {
-      id: "category",
-      name: "Category",
+      id: 'category',
+      name: 'Category',
       options: categories,
     },
     {
-      id: "brand",
-      name: "Brands",
+      id: 'brand',
+      name: 'Brands',
       options: brands,
     },
   ];
@@ -64,6 +63,7 @@ export default function ProductList() {
   const [sort, setSort] = useState({});
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   const [page, setPage] = useState(1);
+
   const handleFilter = (e, section, option) => {
     console.log(e.target.checked);
     const newFilter = { ...filter };
@@ -99,6 +99,7 @@ export default function ProductList() {
   useEffect(() => {
     const pagination = { _page: page, _limit: ITEMS_PER_PAGE };
     dispatch(fetchProductsByFiltersAsync({ filter, sort, pagination }));
+    // TODO : Server will filter deleted products
   }, [dispatch, filter, sort, page]);
 
   useEffect(() => {
@@ -156,10 +157,10 @@ export default function ProductList() {
                               onClick={(e) => handleSort(e, option)}
                               className={classNames(
                                 option.current
-                                  ? "font-medium text-gray-900"
-                                  : "text-gray-500",
-                                active ? "bg-gray-100" : "",
-                                "block px-4 py-2 text-sm"
+                                  ? 'font-medium text-gray-900'
+                                  : 'text-gray-500',
+                                active ? 'bg-gray-100' : '',
+                                'block px-4 py-2 text-sm'
                               )}
                             >
                               {option.name}
@@ -401,16 +402,16 @@ function ProductGrid({ products, status }) {
     <div className="bg-white">
       <div className="mx-auto max-w-2xl px-4 py-0 sm:px-6 sm:py-0 lg:max-w-7xl lg:px-8">
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-          {status === "loading" ? (
-            <TailSpin
-              visible={true}
+          {status === 'loading' ? (
+            <Grid
               height="80"
               width="80"
-              color="#2563eb"
-              ariaLabel="tail-spin-loading"
-              radius="1"
+              color="rgb(79, 70, 229) "
+              ariaLabel="grid-loading"
+              radius="12.5"
               wrapperStyle={{}}
               wrapperClass=""
+              visible={true}
             />
           ) : null}
           {products.map((product) => (
@@ -438,19 +439,24 @@ function ProductGrid({ products, status }) {
                   </div>
                   <div>
                     <p className="text-sm block font-medium text-gray-900">
-                      $
-                      {Math.round(
-                        product.price * (1 - product.discountPercentage / 100)
-                      )}
+                      ${discountedPrice(product)}
                     </p>
                     <p className="text-sm block line-through font-medium text-gray-400">
                       ${product.price}
                     </p>
                   </div>
                 </div>
-                {product.stock <= 0 && (
-                  <div className="text-red-600">Out of stock</div>
+                {product.deleted && (
+                  <div>
+                    <p className="text-sm text-red-400">product deleted</p>
+                  </div>
                 )}
+                {product.stock <= 0 && (
+                  <div>
+                    <p className="text-sm text-red-400">out of stock</p>
+                  </div>
+                )}
+                {/* TODO: will not be needed when backend is implemented */}
               </div>
             </Link>
           ))}
