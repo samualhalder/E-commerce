@@ -32,7 +32,7 @@ import AdminOrdersPage from "./pages/AdminOrdersPage";
 import { positions, Provider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import { checkAuth } from "./features/auth/authAPI";
-import StripeCheckout from "./pages/stripeCheckout";
+import StripeCheckout from "./pages/StripeCheckout";
 
 const options = {
   timeout: 5000,
