@@ -18,7 +18,7 @@ const navigation = [
 ];
 const userNavigation = [
   { name: "My Profile", link: "/profile" },
-  { name: "My Orders", link: "/orders" },
+  { name: "My Orders", link: "/my-orders" },
   { name: "Sign out", link: "/logout" },
 ];
 
@@ -43,8 +43,8 @@ function NavBar({ children }) {
                       <div className="flex-shrink-0">
                         <Link to="/">
                           <img
-                            className="h-8 w-8"
-                            src="/ecommerce.png"
+                            className="h-9 w-14"
+                            src="/hellomall-home.png"
                             alt="Your Company"
                           />
                         </Link>

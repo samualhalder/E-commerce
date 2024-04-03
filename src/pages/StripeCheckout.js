@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
+import { useSelector } from "react-redux";
 
 import CheckoutForm from "./CheckoutForm";
 import "../Stripe.css";
-import { useSelector } from "react-redux";
 import { selectCurrentOrder } from "../features/order/orderSlice";
 
 // Make sure to call loadStripe outside of a component’s render to avoid
@@ -23,10 +23,10 @@ export default function StripeCheckout() {
     fetch("/create-payment-intent", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ totalAmount: currentOrder.totalAmount }),
-      meta: {
-        order_id: currentOrder.id,
-      },
+      body: JSON.stringify({
+        totalAmount: currentOrder.totalAmount,
+        orderId: currentOrder.id,
+      }),
     })
       .then((res) => res.json())
       .then((data) => setClientSecret(data.clientSecret));
